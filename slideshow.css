@@ -1,0 +1,20 @@
+.slide-container {
+    /* position: relative; */
+}
+
+.slide-img {
+    /* width: 50%; */
+    display: none;
+    position: relative;
+}
+
+.active {
+    display: inline-block;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
