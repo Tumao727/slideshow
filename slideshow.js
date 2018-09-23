@@ -16,7 +16,7 @@ const bindEventSlide = () => {
         // 下一张 offset 是 1
         let offset = Number(self.dataset.offset)
         // 求出下一张图片的下标，从而通过选择器选出下一张图片
-        let nextIndex = (index + offset + numberOfImgs) % numberOfImgs
+        let nextIndex = (numberOfImgs + index + offset) % numberOfImgs
         let nextSelector = '#id-img-' + String(nextIndex)
         let img = e(nextSelector)
         // 为下一张图片添加 active class

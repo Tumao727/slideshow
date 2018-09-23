@@ -30,8 +30,8 @@ h2 {
 
 .slide-button {
     width: 15px;
-    height: 20px;
-    background: #eae7e74b;
+    height: 25px;
+    /* background: #eae7e74b; */
 }
 
 .slide-button:hover {
@@ -44,14 +44,12 @@ h2 {
     left: 0;
     color:#f5f5c6;
     padding: 2%;
-    box-shadow: -1px 1px 2px #A6A6A6;
 }
 
 .slide-right {
     right: 0;
     color: #f5f5c6;
     padding: 2%;
-    box-shadow: 1px 1px 2px #A6A6A6;
 }
 
 .vertical-center {
