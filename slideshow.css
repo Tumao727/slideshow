@@ -29,25 +29,29 @@ h2 {
 }
 
 .slide-button {
-    width: 20px;
+    width: 15px;
     height: 20px;
-    border: 1px solid #f5f5c6;
+    background: #eae7e74b;
 }
 
 .slide-button:hover {
     cursor: pointer;
+    color: #27253d;
+    background-color: #eae7e77c;
 }
 
 .slide-left {
     left: 0;
     color:#f5f5c6;
     padding: 2%;
+    box-shadow: -1px 1px 2px #A6A6A6;
 }
 
 .slide-right {
     right: 0;
     color: #f5f5c6;
     padding: 2%;
+    box-shadow: 1px 1px 2px #A6A6A6;
 }
 
 .vertical-center {
