@@ -1,18 +1,56 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: #f5f5c6;
+}
+
+h2 {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    font-weight: 400;
+}
+
 .slide-container {
-    /* position: relative; */
+    position: relative;
+    width: 50%;
+    margin: 3% auto;
+    text-align: center;
 }
 
 .slide-img {
-    /* width: 50%; */
+    width: 100%;
     display: none;
-    position: relative;
 }
 
 .active {
     display: inline-block;
 }
 
-.next {
+.slide-button {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #f5f5c6;
+}
+
+.slide-button:hover {
+    cursor: pointer;
+}
+
+.slide-left {
+    left: 0;
+    color:#f5f5c6;
+    padding: 2%;
+}
+
+.slide-right {
+    right: 0;
+    color: #f5f5c6;
+    padding: 2%;
+}
+
+.vertical-center {
     position: absolute;
     top: 50%;
     right: 0;
