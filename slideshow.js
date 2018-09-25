@@ -9,27 +9,12 @@ const bindEventSlide = () => {
         // 求出当前 active 元素的下标
         let index = Number(activeElement.id.slice(-1))
         let numberOfImgs = Number(slide.dataset.img)
-        // 删除当前图片的 class，给下一张图片加上 class
-        let className = 'active'
-        removeClassAll(className)
         // 上一张 offset 是 -1
         // 下一张 offset 是 1
         let offset = Number(self.dataset.offset)
         // 求出下一张图片的下标，从而通过选择器选出下一张图片
         let nextIndex = (numberOfImgs + index + offset) % numberOfImgs
-        let nextSelector = '#id-img-' + String(nextIndex)
-        let img = e(nextSelector)
-        // 为下一张图片添加 active class
-        img.classList.toggle('active')
-
-        // 切换小圆点
-        let indicatorClass = 'indi-active'
-        removeClassAll(indicatorClass)
-        // 求出下一个小圆点的下标，从而通过选择器选出下一个小圆点
-        let nextIndi = '#id-indicator-' + String(nextIndex)
-        let indi = e(nextIndi)
-        // 为下一个小圆点添加 indi-active class
-        indi.classList.toggle('indi-active')
+        showImageAtIndex(nextIndex)
     })
 }
 
@@ -37,23 +22,29 @@ const bindEventIndicator = () => {
     let selector = '.slide-indi'
     bindAll(selector, 'mouseover', (event) => {
         let self = event.target
-        // 删除当前图片的 class，给下一张图片加上 class
-        let className = 'active'
-        removeClassAll(className)
-        let indicatorClass = 'indi-active'
-        removeClassAll(indicatorClass)
-
         let index = Number(self.dataset.index)
-        let imgSelector = '#id-img-' + String(index)
-        let img = e(imgSelector)
-
-        let nextIndi = '#id-indicator-' + String(index)
-        let indi = e(nextIndi)
-        // 为下一个小圆点添加 indi-active class
-        indi.classList.toggle('indi-active')
-        // 为下一张图片添加 active class
-        img.classList.toggle('active')
+        showImageAtIndex(index)
     })
+}
+
+const showImageAtIndex = (index) => {
+    let nextIndex = index
+    // 删除当前图片的 class，给下一张图片加上 class
+    let className = 'active'
+    removeClassAll(className)
+    let nextSelector = '#id-img-' + String(nextIndex)
+    let img = e(nextSelector)
+    // 为下一张图片添加 active class
+    img.classList.toggle('active')
+
+    // 切换小圆点
+    let indicatorClass = 'indi-active'
+    removeClassAll(indicatorClass)
+    // 求出下一个小圆点的下标，从而通过选择器选出下一个小圆点
+    let nextIndi = '#id-indicator-' + String(nextIndex)
+    let indi = e(nextIndi)
+    // 为下一个小圆点添加 indi-active class
+    indi.classList.toggle('indi-active')
 }
 
 const __main = () => {
