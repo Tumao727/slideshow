@@ -33,8 +33,32 @@ const bindEventSlide = () => {
     })
 }
 
+const bindEventIndicator = () => {
+    let selector = '.slide-indi'
+    bindAll(selector, 'mouseover', (event) => {
+        let self = event.target
+        // 删除当前图片的 class，给下一张图片加上 class
+        let className = 'active'
+        removeClassAll(className)
+        let indicatorClass = 'indi-active'
+        removeClassAll(indicatorClass)
+
+        let index = Number(self.dataset.index)
+        let imgSelector = '#id-img-' + String(index)
+        let img = e(imgSelector)
+
+        let nextIndi = '#id-indicator-' + String(index)
+        let indi = e(nextIndi)
+        // 为下一个小圆点添加 indi-active class
+        indi.classList.toggle('indi-active')
+        // 为下一张图片添加 active class
+        img.classList.toggle('active')
+    })
+}
+
 const __main = () => {
     bindEventSlide()
+    bindEventIndicator()
 }
 
 __main()
