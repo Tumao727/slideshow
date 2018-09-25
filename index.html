@@ -12,14 +12,25 @@
 <body>
     <h2>万引き家族</h2>
     <div class="slide-container" data-img='5' data-active='0'>
+        <!-- 轮播图片 -->
         <img class="slide-img active" id='id-img-0' src="slideimgs/1.jpg" alt="img1">
         <img class="slide-img" id='id-img-1' src="slideimgs/2.jpg" alt="img2">
         <img class="slide-img" id='id-img-2' src="slideimgs/3.jpg" alt="img3">
         <img class="slide-img" id='id-img-3' src="slideimgs/4.jpg" alt="img4">
         <img class="slide-img" id='id-img-4' src="slideimgs/5.jpg" alt="img5">
         
-        <div class="slide-button slide-right vertical-center" data-offset='1'><span class="fas fa-chevron-right"></span></div>
-        <div class="slide-button slide-left vertical-center" data-offset='-1'><span class="fas fa-chevron-left"></span></div>
+        <!-- 左右滑动按钮 -->
+        <div class="fas fa-chevron-right slide-button slide-right vertical-center" data-offset='1'></div>
+        <div class="fas fa-chevron-left slide-button slide-left vertical-center" data-offset='1'></div>
+
+        <!-- 小圆点 -->
+        <div class="slide-indicators">
+            <div id="id-indicator-0" class="slide-indi indi-active"></div>
+            <div id="id-indicator-1" class="slide-indi"></div>
+            <div id="id-indicator-2" class="slide-indi"></div>
+            <div id="id-indicator-3" class="slide-indi"></div>
+            <div id="id-indicator-4" class="slide-indi"></div>
+        </div>
     </div>
 
     <script src="slideshow.js"></script>

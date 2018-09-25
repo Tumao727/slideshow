@@ -1,6 +1,7 @@
 * {
     margin: 0;
 }
+
 body {
     background-color: #f5f5c6;
 }
@@ -31,7 +32,8 @@ h2 {
 .slide-button {
     width: 15px;
     height: 25px;
-    /* background: #eae7e74b; */
+    line-height: 25px;
+    font-size: 25px;
 }
 
 .slide-button:hover {
@@ -57,4 +59,19 @@ h2 {
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+}
+
+.slide-indi {
+    display: inline-block;
+    position: relative;
+    top: -30px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.indi-active {
+    background: #326765;
 }

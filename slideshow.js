@@ -21,6 +21,15 @@ const bindEventSlide = () => {
         let img = e(nextSelector)
         // 为下一张图片添加 active class
         img.classList.toggle('active')
+
+        // 切换小圆点
+        let indicatorClass = 'indi-active'
+        removeClassAll(indicatorClass)
+        // 求出下一个小圆点的下标，从而通过选择器选出下一个小圆点
+        let nextIndi = '#id-indicator-' + String(nextIndex)
+        let indi = e(nextIndi)
+        // 为下一个小圆点添加 indi-active class
+        indi.classList.toggle('indi-active')
     })
 }
 
