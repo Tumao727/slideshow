@@ -9,7 +9,7 @@ const nextIndex = (slide, offset) => {
     return nextIndex
 }
 
-const bindEventSlide = () => {
+const bindEventSlide = (timer) => {
     let selector = ".slide-button" 
     bindAll(selector, 'click', (event) => {
         let self = event.target
@@ -24,7 +24,7 @@ const bindEventSlide = () => {
     })
 }
 
-const bindEventIndicator = () => {
+const bindEventIndicator = (timer) => {
     let selector = '.slide-indi'
     bindAll(selector, 'mouseover', (event) => {
         let self = event.target
@@ -66,17 +66,44 @@ const playNextImage = () => {
 }
 
 const autoPlay = () => {
-    let interval = 4000
-    setInterval(() => {
-        // 每 4 秒调用一次
+    let interval = 3500
+    timer = setInterval(() => {
+        // 每 3 秒调用一次
         playNextImage()
     }, interval)
+}
+
+const stop = () => {
+    clearInterval(timer)
+}
+
+const restart = () => {
+    stop()
+    autoPlay()
+}
+
+const timeControl = () => {
+    // 设置定时器开关
+    let timer = null
+    autoPlay()
+
+    // 点击左右按钮时清除定时器
+    let buttons = '.slide-button'
+    bindAll(buttons, 'click', stop)
+    // 鼠标移出按钮时继续自动播放
+    bindAll(buttons, 'mouseout', restart)
+    
+    // 鼠标悬浮于小圆点时清除定时器
+    let indis = '.slide-indi'
+    bindAll(indis, 'mouseover', stop)
+    // 鼠标移出小圆点时继续自动播放
+    bindAll(indis, 'mouseout', restart)
 }
 
 const __main = () => {
     bindEventSlide()
     bindEventIndicator()
-    autoPlay()
+    timeControl()
 }
 
 __main()
