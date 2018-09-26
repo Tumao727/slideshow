@@ -57,9 +57,26 @@ const showIndicatorAtIndex = (index) => {
     indi.classList.toggle('indi-active')
 }
 
+const playNextImage = () => {
+    let slide = e('.slide-container')
+    let offset = 1
+    let index = nextIndex(slide, offset)
+    showImageAtIndex(index)
+    showIndicatorAtIndex(index)
+}
+
+const autoPlay = () => {
+    let interval = 4000
+    setInterval(() => {
+        // 每 4 秒调用一次
+        playNextImage()
+    }, interval)
+}
+
 const __main = () => {
     bindEventSlide()
     bindEventIndicator()
+    autoPlay()
 }
 
 __main()
